@@ -1,0 +1,41 @@
+.container {
+    max-width: 1139px;
+    margin: 0 auto;
+}
+header .header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header .header-navbar nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 75px;
+}
+.header .header-navbar nav ul li {
+    list-style-type: none;
+
+}
+.header .header-navbar nav ul li a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 29px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+.header .header-navbar nav ul li a:hover {
+    color: #0281ff;
+}
+.header-logo img {
+    width: 200px;
+    height: 200px;
+    filter: invert(100%);
+}
