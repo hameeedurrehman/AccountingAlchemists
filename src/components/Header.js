@@ -1,12 +1,23 @@
 import "../components/header.css";
 import logo from "../components/assets/logo.png"
+import { useEffect, useState } from "react";
 
 function Header() {
-;
+    const [header, setHeader] = useState('header')
+    const scrollFunc = () => {
+        if (window.scrollY < 70){
+            setHeader('header')
+        } else if(window.scrollY > 70) {
+            setHeader('setHeader')
+        }
+    }
+    useEffect(()=> {
+        window.addEventListener("scroll", scrollFunc)
+    },[])
     return (
         <>
             <header>
-                <div class="header">
+                <div class={header} >
                     <div class="container">
 
                         <div class="header-logo">

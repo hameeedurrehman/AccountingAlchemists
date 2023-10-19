@@ -9,7 +9,7 @@ import audit from "../components/assets/audit-support.jpg";
 function Services() {
     return (
         <>
-            <div class="work-row">
+            <div class="work-row" id="services">
                 <div class="container">
                     <h2 class="tagline">Services</h2>
                     <span class="work-tagline">The Accounting Alchemists helps organize and align the tactical day-to-day tasks with
