@@ -1,6 +1,7 @@
 import "../components/header.css";
 import logo from "../components/assets/logo.png"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [header, setHeader] = useState('header')
@@ -29,8 +30,8 @@ function Header() {
                             <nav>
                                 <ul>
                                     <li><a href="#banner">Home</a></li>
-                                    <li><a href="/">Services</a></li>
-                                    <li><a href="/">Blog</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><Link to="/blogs">Blogs</Link></li>
                                     <li><a href="/">Email Us</a></li>
                                     <li><a href="/">Our Story</a></li>
                                     <li><a href="/">Support</a></li>

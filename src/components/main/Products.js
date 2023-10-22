@@ -1,6 +1,7 @@
 import "./products.css";
 import services from "../assets/accounting-services.jpg";
 import finance from "../assets/financial-education.jpg";
+import { Link } from "react-router-dom";
 
 function Products() {
   return (
@@ -21,14 +22,14 @@ function Products() {
       <div class="product-box">
         <div className="products-thumbnail">
           <img src={finance} alt="..." />
-          <a href="/" id="overlay-img">
+          <Link to="/blogs" id="overlay-img">
             <i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i>
-          </a>
+          </Link>
         </div>
         <div class="box-body">
-          <a href="/">
+          <Link to="/blogs">
           <h2 class="box-title">Financial Education</h2>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
