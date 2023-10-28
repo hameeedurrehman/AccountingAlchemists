@@ -1,0 +1,101 @@
+footer .footer {
+    border-top: 1px solid white;
+    padding: 60px 0 98px 0;
+    color: white !important;
+    background: rgb(0, 23, 45);
+    background: linear-gradient(90deg, rgba(0, 23, 45, 1) 8%, rgba(0, 11, 24, 1) 57%, rgba(0, 38, 77, 1) 100%);
+}
+
+.footer-heading-before {
+    font-size: 14px;
+    line-height: 25px;
+    font-family: 'Merriweather', serif;
+}
+.footer-heading-after {
+    font-size: 12px;
+    line-height: 25px;
+    font-family: 'Merriweather', serif;
+}
+.footer-heading h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-family: 'Merriweather', serif;
+}
+.footer .footer-details {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.footer-paragraph {
+    padding: 23px 0 0 0;
+    font-family: 'Vollkorn', serif;
+    font-size: 17px;
+    line-height: 29px;
+}
+.footer-description {
+    width: 418px;
+    height: 229px;
+}
+.footer-information h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+    padding: 0 0 15px 0;
+}
+.footer-information ul li {
+    list-style-type: none;
+}
+.footer-information ul li a {
+    font-size: 16px;
+    line-height: 33px;
+    display: block;
+    font-family: 'Vollkorn', serif;
+    color: #FFF;
+    
+}
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-connect h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+}
+.footer-connect span {
+    font-size: 14px;
+    line-height: 33px;
+    font-family: 'Vollkorn', serif;
+    padding: 15px 0 0 0;
+    display: block;
+}
+.footer-connect form {
+    display: flex;
+
+}
+.footer-icons {
+    margin: 19px 0 0 0;
+}
+.footer-icons .fa-xl {
+    margin: 2px;
+}
+ .footer-icons .wifi {
+    transform: rotate(45deg);
+
+}
+.footer-bottom {
+    border-top: 1px solid white;
+    background: rgb(0, 23, 45);
+    background: linear-gradient(90deg, rgba(0, 23, 45, 1) 8%, rgba(0, 11, 24, 1) 57%, rgba(0, 38, 77, 1) 100%);
+}
+.footer-bottom .footer-text {
+    display: block;
+    padding: 25px 0;
+    text-align: center;
+    color: #777777;
+    font-size: 12px;
+    line-height: 33px;
+    font-family: 'Open Sans', sans-serif;
+}

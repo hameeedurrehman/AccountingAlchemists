@@ -80,3 +80,15 @@
     transform: scale(1.2);
     cursor: grab;
 }
+@media screen and (max-width: 730px) {
+    .work-row .work-detail {
+        justify-content: center;
+    }
+    .work-row .work-box {
+        height: 290px;
+        width: 290px;
+    }
+    .box-image {
+        width: 290px;
+    }
+}

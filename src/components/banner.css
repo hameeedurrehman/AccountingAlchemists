@@ -5,16 +5,17 @@
     position: relative;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center center;
 }
 
 .banner .container h1 {
     color: #fff;
     font-size: 40px;
-    line-height: 29px;
+    line-height: 1.2;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    padding: 54vh 0 0 0;
+    padding: 45vh 0 0 0;
     text-align: center;
 }
 .banner-text {
@@ -35,30 +36,8 @@
     position: absolute;
     width: 100%;
 }
-/* .banner-reviews {
-    padding: 10px 0 0 0;
-    position: relative;
+@media screen and (max-width: 992px) {
+    .banner .container h1 {
+        padding: 40vh 0 0 0;
+    }
 }
-.banner-total-reviews {
-    color: #fff;
-    font-size: 11px;
-    line-height: 29px;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-}
-
-.banner a {
-    border: none;
-    background-color: #f4da55;
-    color: #000;
-    padding: 12px 55px;
-    font-size: 20px;
-    line-height: 29px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    position: relative;
-}
-.banner .banner-button {
-    padding: 42px 0 0 0;
-} */
