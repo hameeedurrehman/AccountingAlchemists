@@ -22,13 +22,16 @@ function Blogs() {
     if (localBlogs) {
       setMyBlog(JSON.parse(localBlogs));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     // Check if the user is already logged in (based on your criteria)
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn) {
       setIsCreateBlogModalOpen(true); // Open the blog creation modal
+      isCreateBlogModalOpen(true)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (values) => {
@@ -87,6 +90,7 @@ function Blogs() {
     <>
       <div className="background">
         <Header />
+        
       </div>
       <button
         type="button"
