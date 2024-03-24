@@ -9,7 +9,7 @@ function Header() {
         if (window.scrollY < 70) {
             setHeader('header')
         } else if (window.scrollY > 70) {
-            setHeader('setHeader')
+            setHeader('header')
         }
     }
     useEffect(() => {
@@ -42,10 +42,10 @@ function Header() {
                                         <Link class="nav-link" to="/blogs">Blogs</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link class="nav-link" to="#testimonials">Testimonials</Link>
+                                        <Link class="nav-link" href="#testimonials">Testimonials</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link class="nav-link" to="#footer">Contact Us</Link>
+                                        <Link class="nav-link" href="#footer">Contact Us</Link>
                                     </li>
                                 </ul>
                             </div>

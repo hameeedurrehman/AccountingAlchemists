@@ -29,7 +29,6 @@ function Blogs() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn) {
       setIsCreateBlogModalOpen(true); // Open the blog creation modal
-      isCreateBlogModalOpen(true)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
