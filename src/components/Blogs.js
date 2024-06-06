@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Import useState
+import React, { useState, useEffect } from 'react';
 import Header from "./Header";
 import "../components/blogs.css";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -11,92 +11,71 @@ const validationSchema = Yup.object({
 });
 
 function Blogs() {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Initialize modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCreateBlogModalOpen, setIsCreateBlogModalOpen] = useState(false);
-    // Add a state to track whether the paragraph is expanded or not
-    const [isParagraphExpanded, setIsParagraphExpanded] = useState(false);
+  const [isParagraphExpanded, setIsParagraphExpanded] = useState(false);
 
   const [myBlog, setMyBlog] = useState([]);
   const localBlogs = localStorage.getItem('myBlog');
+
   useEffect(() => {
     if (localBlogs) {
       setMyBlog(JSON.parse(localBlogs));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   useEffect(() => {
-    // Check if the user is already logged in (based on your criteria)
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn) {
-      setIsCreateBlogModalOpen(true); // Open the blog creation modal
+      setIsCreateBlogModalOpen(true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (values) => {
-    // Get the list of emails from your JSON data
     const emails = db.user.map(item => item.email);
-
-    // Check if the entered email exists in the JSON data
     if (emails.includes(values.email)) {
       const user = db.user.find(item => item.email === values.email);
-
-      // Check if the entered password matches the stored password
       if (user.password === values.password) {
-        // Password is correct
         console.log('Login successful');
-        setIsModalOpen(false); // Close the login modal
-        setIsCreateBlogModalOpen(true); // Open the blog creation modal
-
-        // Store login state in local storage
+        setIsModalOpen(false);
+        setIsCreateBlogModalOpen(true);
         localStorage.setItem('isLoggedIn', 'true');
       } else {
-        // Password is incorrect
         console.log('Incorrect password');
       }
     } else {
-      // Email doesn't exist, you can display an error message
       console.log('Email not found');
     }
   };
+
   const handleBlogSubmit = (blogData) => {
-    // Handle the submission of the blog post form here
-    // You can add the new blog post to your page
     const updatedBlogs = [...myBlog, blogData];
-
-    // Save the updated blogs to localStorage
     localStorage.setItem('myBlog', JSON.stringify(updatedBlogs));
-
     setMyBlog(updatedBlogs);
-    // Close the blog creation modal if needed
     setIsCreateBlogModalOpen(true);
   };
-  // Open the login modal
   const openLoginModal = () => {
-    setIsModalOpen(true); // Set your state
+    setIsModalOpen(true);
     // eslint-disable-next-line no-undef
-    $('#exampleModal').modal('show'); // Use jQuery to show the modal
+    $('#exampleModal').modal('show');
   };
-
-  // Open the blog post modal
   const openBlogPostModal = () => {
-    setIsCreateBlogModalOpen(true); // Set your state
+    setIsCreateBlogModalOpen(true);
     // eslint-disable-next-line no-undef
-    $('#createBlogModal').modal('show'); // Use jQuery to show the modal
+    $('#createBlogModal').modal('show');
   };
 
   return (
     <>
       <div className="background">
         <Header />
-        
       </div>
       <button
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
-        onClick={openLoginModal} // Open the modal
+        onClick={openLoginModal}
       >
         Admin Login
       </button>
@@ -110,7 +89,7 @@ function Blogs() {
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                onClick={() => setIsModalOpen(false)} // Close the modal
+                onClick={() => setIsModalOpen(false)}
               ></button>
             </div>
             <div className="modal-body">
@@ -156,7 +135,7 @@ function Blogs() {
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                onClick={() => setIsCreateBlogModalOpen(false)} // Close the blog creation modal
+                onClick={() => setIsCreateBlogModalOpen(false)}
               ></button>
             </div>
             <div className="modal-body">
@@ -197,13 +176,11 @@ function Blogs() {
       {myBlog.map((blog, index) => (
         <div key={`${index}`} className='blogSection'>
           <h1>{blog.title}</h1>
-          {/* Conditionally render the paragraph based on the state */}
           {isParagraphExpanded ? (
             <p>{blog.details}</p>
           ) : (
             <p>{blog.details.slice(0, 100)}...</p>
           )}
-          {/* Toggle the state when the "Read More" or "Read Less" button is clicked */}
           <button
             onClick={() => setIsParagraphExpanded(!isParagraphExpanded)}
           >
